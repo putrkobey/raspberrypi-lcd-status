@@ -1,6 +1,9 @@
 name: Build and Release Docker Image
 
 on:
+
+permissions:
+  contents: read
   push:
     tags:
       - '*'
@@ -41,3 +44,7 @@ jobs:
           body_path: CHANGELOG.md
           draft: false
           prerelease: false
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true

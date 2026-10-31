@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
 
       - name: Set up QEMU for ARM emulation
         uses: docker/setup-qemu-action@v2
